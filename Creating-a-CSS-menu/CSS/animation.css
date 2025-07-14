@@ -1,0 +1,43 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.photo-overlay {
+  opacity: 0;
+  transition: opacity 0.55s;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.photo-container:hover .photo-overlay {
+  opacity: 1;
+}
+
+.photo img {
+  transition: transform 0.5s ease;
+  transform-origin: 50% 50%;
+}
+
+.photo:hover img {
+  transform: scale(1.1);
+}
+
+.menu li {
+  color: #fff;
+  background-color: rgba(10, 10, 40, 0.8);
+  display: inline-block;
+  margin: 0 8px;
+  position: relative;
+  padding: 15
