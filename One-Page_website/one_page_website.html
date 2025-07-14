@@ -2,49 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My One-Page Website</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
-    nav {
-      background-color: #333;
-      padding: 10px;
-      position: sticky;
-      top: 0;
-    }
-    nav a {
-      color: white;
-      margin-right: 15px;
-      text-decoration: none;
-    }
-    section {
-      padding: 40px 20px;
-      border-bottom: 1px solid #ddd;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f2f2f2;
-    }
-    img {
-      width: 200px;
-      margin: 10px;
-    }
-    form input, form textarea {
-      display: block;
-      margin: 10px 0;
-      width: 100%;
-      max-width: 400px;
-      padding: 8px;
-    }
-  </style>
+  <title>Explore My Stunning World</title>
+  <link rel="stylesheet" href="css/one_page_website.css">
 </head>
 <body>
 
   <!-- Navigation Bar -->
-  <nav>
+  <nav class="fade-in">
     <a href="#home">Home</a>
     <a href="#gallery">Gallery</a>
     <a href="#video">Video</a>
@@ -52,41 +16,63 @@
   </nav>
 
   <!-- Home Section -->
-  <section id="home">
-    <h1>Welcome to My Website</h1>
-    <p>This is a one-page site built with basic HTML. Here you’ll find images, videos, and a contact form.</p>
+  <section id="home" class="fade-in">
+    <h1>Discover a World of Wonder</h1>
+    <p>Immerse yourself in breathtaking visuals, inspiring videos, and seamless interaction. Begin your journey today!</p>
+    <button onclick="scrollToSection('gallery')" class="explore-btn">Explore Now</button>
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <img src="images/photo1.jpg" alt="Image 1">
-    <img src="images/photo2.jpg" alt="Image 2">
-    <img src="images/photo3.jpg" alt="Image 3">
+  <section id="gallery" class="fade-in">
+    <h2>Visual Masterpieces</h2>
+    <div class="gallery-grid">
+      <a href="https://source.unsplash.com/400x300/?nature" target="_blank"><img src="https://source.unsplash.com/400x300/?nature" alt="Nature 1" class="gallery-img"></a>
+      <a href="https://source.unsplash.com/400x300/?mountain" target="_blank"><img src="https://source.unsplash.com/400x300/?mountain" alt="Mountain 1" class="gallery-img"></a>
+      <a href="https://source.unsplash.com/400x300/?forest" target="_blank"><img src="https://source.unsplash.com/400x300/?forest" alt="Forest 1" class="gallery-img"></a>
+    </div>
   </section>
 
   <!-- Video Section -->
-  <section id="video">
-    <h2>Watch This Video</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" 
-      title="YouTube video" allowfullscreen></iframe>
+  <section id="video" class="fade-in">
+    <h2>Watch & Be Inspired</h2>
+    <div class="video-card">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ZH6Q5UFkXzg?autoplay=0" 
+        title="NASA's Journey to Mars" allowfullscreen class="video-frame"></iframe>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="#" method="post">
+  <section id="contact" class="fade-in">
+    <h2>Get in Touch</h2>
+    <form action="#" method="post" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-      <input type="submit" value="Send">
+      <input type="submit" value="Send Message">
     </form>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 My One-Page Website. All rights reserved.</p>
+  <footer class="fade-in">
+    <p>© 2025 My Stunning Website. All rights reserved. | <a href="#home">Back to Top</a></p>
   </footer>
 
+  <script>
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+    window.addEventListener('scroll', reveal);
+    function reveal() {
+      let reveals = document.querySelectorAll('.fade-in');
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let revealTop = reveals[i].getBoundingClientRect().top;
+        let revealPoint = 150;
+        if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('active');
+        }
+      }
+    }
+  </script>
 </body>
 </html>
