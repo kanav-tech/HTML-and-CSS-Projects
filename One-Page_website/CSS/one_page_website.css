@@ -1,3 +1,4 @@
+/* === ORIGINAL STYLING === */
 * {
   margin: 0;
   padding: 0;
@@ -290,4 +291,38 @@ footer a:hover {
   #contact form {
     padding: 0;
   }
+}
+
+/* === LIGHTBOX STYLES ADDED AT END === */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.lightbox .close {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.lightbox .close:hover {
+  color: #ff4b2b;
 }

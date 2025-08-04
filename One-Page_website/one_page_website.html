@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Explore My Stunning World</title>
-  <link rel="stylesheet" href="css/one_page_website.css">
+  <link rel="stylesheet" href="CSS/one_page_website.css">
 </head>
 <body>
 
@@ -26,9 +26,10 @@
   <section id="gallery" class="fade-in">
     <h2>Visual Masterpieces</h2>
     <div class="gallery-grid">
-      <a href="https://source.unsplash.com/400x300/?nature" target="_blank"><img src="https://source.unsplash.com/400x300/?nature" alt="Nature 1" class="gallery-img"></a>
-      <a href="https://source.unsplash.com/400x300/?mountain" target="_blank"><img src="https://source.unsplash.com/400x300/?mountain" alt="Mountain 1" class="gallery-img"></a>
-      <a href="https://source.unsplash.com/400x300/?forest" target="_blank"><img src="https://source.unsplash.com/400x300/?forest" alt="Forest 1" class="gallery-img"></a>
+      <img src="images/plant1-small.png" data-large="images/plant1.png" alt="Plant 1" class="gallery-img lightbox-thumb">
+      <img src="images/plant2-small.png" data-large="images/plant2.png" alt="Plant 2" class="gallery-img lightbox-thumb">
+      <img src="images/plant3-small.png" data-large="images/plant3.png" alt="Plant 3" class="gallery-img lightbox-thumb">
+      <img src="images/plant4-small.png" data-large="images/plant4.png" alt="Plant 4" class="gallery-img lightbox-thumb">
     </div>
   </section>
 
@@ -57,6 +58,12 @@
     <p>© 2025 My Stunning Website. All rights reserved. | <a href="#home">Back to Top</a></p>
   </footer>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged Image" />
+  </div>
+
   <script>
     function scrollToSection(sectionId) {
       document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
@@ -74,5 +81,7 @@
       }
     }
   </script>
+
+  <script src="JS/one_page_website.js"></script>
 </body>
 </html>
